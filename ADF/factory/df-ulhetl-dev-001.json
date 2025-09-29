@@ -1,0 +1,9 @@
+{
+	"name": "df-ulhetl-dev-001",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e0f30a0c-2d69-4c4e-8736-bf3672a96829",
+		"tenantId": "0bf60c8b-2276-4fa1-847f-c9ebc0e8127d"
+	}
+}
