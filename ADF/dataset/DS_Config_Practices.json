@@ -1,0 +1,23 @@
+{
+	"name": "DS_Config_Practices",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageTest",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "config"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "practiceConfigTest.json",
+				"folderPath": "util/config",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": {}
+	}
+}
