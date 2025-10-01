@@ -2,7 +2,7 @@
 	"name": "DS_Config_Practices",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorageTest",
+			"referenceName": "LS_ADLS",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
