@@ -11,9 +11,6 @@
 			},
 			"directory": {
 				"type": "string"
-			},
-			"fileName": {
-				"type": "string"
 			}
 		},
 		"folder": {
