@@ -98,6 +98,37 @@
 									"type": "Expression"
 								}
 							}
+						},
+						{
+							"name": "Set_SinkContainer",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "vSinkContainer",
+								"value": {
+									"value": "@item().target.container",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set_SinkDirectory",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "vSinkDirectory",
+								"value": "@item().target.directory\n"
+							}
 						}
 					]
 				}
