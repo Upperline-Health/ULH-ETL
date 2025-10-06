@@ -7,22 +7,32 @@
 		},
 		"parameters": {
 			"container": {
-				"type": "string"
+				"type": "String"
 			},
 			"directory": {
-				"type": "string"
+				"type": "String"
+			},
+			"fileName": {
+				"type": "String"
 			}
-		},
-		"folder": {
-			"name": "adls"
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "@dataset().directory",
-				"fileSystem": "@dataset().container"
+				"fileName": {
+					"value": "@{dataset().fileName}",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@{dataset().directory}",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@{dataset().container}",
+					"type": "Expression"
+				}
 			}
 		}
 	}
