@@ -1,6 +1,10 @@
 {
 	"name": "DS_Config_Practices",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SRC_ADLS",
+			"type": "LinkedServiceReference"
+		},
 		"folder": {
 			"name": "config"
 		},
