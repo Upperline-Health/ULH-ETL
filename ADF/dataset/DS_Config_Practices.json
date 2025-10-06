@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "practiceConfigTest.json",
+				"fileName": "practiceConfig.json",
 				"folderPath": "util/config",
 				"fileSystem": "raw"
 			}
