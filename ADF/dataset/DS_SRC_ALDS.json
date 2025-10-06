@@ -1,0 +1,25 @@
+{
+	"name": "DS_SRC_ALDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SRC_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"container": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": {
+					"value": "@{dataset().container}",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}
