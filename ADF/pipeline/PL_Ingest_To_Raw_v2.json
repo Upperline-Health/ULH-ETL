@@ -1,5 +1,5 @@
 {
-	"name": "PL_Ingest_To_Raw",
+	"name": "PL_Ingest_To_Raw_v2",
 	"properties": {
 		"activities": [
 			{
@@ -29,7 +29,8 @@
 					"dataset": {
 						"referenceName": "DS_Config_Practices",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -62,7 +63,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "vSrcContainer",
-								"value": "@item().connection.adls.container"
+								"value": {
+									"value": "@item().connection.adls.container",
+									"type": "Expression"
+								}
 							}
 						},
 						{
@@ -127,7 +131,10 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "vSinkDirectory",
-								"value": "@item().target.directory\n"
+								"value": {
+									"value": "@item().target.directory",
+									"type": "Expression"
+								}
 							}
 						},
 						{
@@ -179,11 +186,92 @@
 								],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
 									"type": "BinaryReadSettings"
 								}
+							}
+						},
+						{
+							"name": "Filter_ADLS_Files",
+							"type": "Filter",
+							"dependsOn": [
+								{
+									"activity": "ADLS_List",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"items": {
+									"value": "@activity('ADLS_List').output.childItems",
+									"type": "Expression"
+								},
+								"condition": {
+									"value": "@and(or(equals(item().type,'File'), equals(item().type,'file')), or(equals(variables('vFilePattern'), '*'), endswith(item().name, replace(variables('vFilePattern'), '*', ''))))",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Per_File",
+							"type": "ForEach",
+							"dependsOn": [
+								{
+									"activity": "Filter_ADLS_Files",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"items": {
+									"value": "@activity('Filter_ADLS_Files').output.Value",
+									"type": "Expression"
+								},
+								"isSequential": true,
+								"activities": [
+									{
+										"name": "Copy_ADLS_to_ADLS",
+										"type": "Copy",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "BinarySource",
+												"storeSettings": {
+													"type": "AzureBlobFSReadSettings",
+													"recursive": false
+												},
+												"formatSettings": {
+													"type": "BinaryReadSettings"
+												}
+											},
+											"sink": {
+												"type": "BinarySink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "BinaryWriteSettings"
+												}
+											},
+											"enableStaging": false
+										}
+									}
+								]
 							}
 						}
 					]
