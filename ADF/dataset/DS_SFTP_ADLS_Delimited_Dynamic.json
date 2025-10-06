@@ -1,5 +1,5 @@
 {
-	"name": "DS_ADLS_Delimited_Dynamic",
+	"name": "DS_SFTP_ADLS_Delimited_Dynamic",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SFTP_ADLS",
