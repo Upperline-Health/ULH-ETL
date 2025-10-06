@@ -5,16 +5,27 @@
 			"referenceName": "LS_SINK_ADLS",
 			"type": "LinkedServiceReference"
 		},
-		"folder": {
-			"name": "adls"
+		"parameters": {
+			"container": {
+				"type": "String"
+			},
+			"directory": {
+				"type": "String"
+			}
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "appointmentdata/fastpace",
-				"fileSystem": "raw"
+				"folderPath": {
+					"value": "@{dataset().directory}",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@{dataset().container}",
+					"type": "Expression"
+				}
 			}
 		}
 	}
