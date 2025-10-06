@@ -52,7 +52,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "ADT_List",
+							"name": "ADLS_List",
 							"type": "GetMetadata",
 							"dependsOn": [],
 							"policy": {
