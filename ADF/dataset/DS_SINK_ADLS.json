@@ -1,0 +1,21 @@
+{
+	"name": "DS_SINK_ADLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SINK_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "adls"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "appointmentdata/fastpace",
+				"fileSystem": "raw"
+			}
+		}
+	}
+}
