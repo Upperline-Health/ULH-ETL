@@ -31,6 +31,76 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "Per_Practice",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Read_Config",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Read_Config').output.firstRow.Practices",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Set_SrcContainer",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "vSrcContainer",
+								"value": "@item().connection.adls.container"
+							}
+						},
+						{
+							"name": "Set_SrcDirectory",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "vSrcDirectory",
+								"value": {
+									"value": "@item().connection.adls.directory",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set_FilePattern",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "vFilePattern",
+								"value": {
+									"value": "@coalesce(item().connection.adls.file_pattern, '*')",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
 			}
 		],
 		"variables": {
@@ -44,6 +114,9 @@
 				"type": "String"
 			},
 			"vSinkDirectory": {
+				"type": "String"
+			},
+			"vFilePattern": {
 				"type": "String"
 			}
 		},
