@@ -1,0 +1,33 @@
+{
+	"name": "DS_ADLS_Binary_Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SFTP_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"container": {
+				"type": "string"
+			},
+			"directory": {
+				"type": "string"
+			},
+			"fileName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "adls"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@dataset().fileName",
+				"folderPath": "@dataset().directory",
+				"fileSystem": "@dataset().container"
+			}
+		}
+	}
+}
