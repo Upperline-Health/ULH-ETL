@@ -2,7 +2,7 @@
 	"name": "DS_Config_Practices",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_SRC_ADLS",
+			"referenceName": "LS_SINK_ADLS",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
