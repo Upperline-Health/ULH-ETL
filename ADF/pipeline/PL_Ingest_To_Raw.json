@@ -34,7 +34,16 @@
 			}
 		],
 		"variables": {
-			"vFilePattern": {
+			"vSrcContainer": {
+				"type": "String"
+			},
+			"vSrcDirectory": {
+				"type": "String"
+			},
+			"vSinkContainer": {
+				"type": "String"
+			},
+			"vSinkDirectory": {
 				"type": "String"
 			}
 		},
