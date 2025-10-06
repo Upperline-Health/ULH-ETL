@@ -31,34 +31,6 @@
 						"type": "DatasetReference"
 					}
 				}
-			},
-			{
-				"name": "Per_Payer",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Read_Config",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Read_Config').output.firstRow.Practices\n",
-						"type": "Expression"
-					},
-					"isSequential": true,
-					"activities": [
-						{
-							"name": "If_SFTP_Source",
-							"type": "IfCondition",
-							"dependsOn": [],
-							"userProperties": []
-						}
-					]
-				}
 			}
 		],
 		"folder": {
