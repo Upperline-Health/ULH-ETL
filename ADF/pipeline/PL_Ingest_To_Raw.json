@@ -176,9 +176,18 @@
 							"typeProperties": {
 								"dataset": {
 									"referenceName": "DS_ADLS_Binary_Sink",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"container": {
+											"value": "@variables('vSrcContainer')",
+											"type": "Expression"
+										},
+										"directory": "@variables('vSrcDirectory')"
+									}
 								},
-								"fieldList": [],
+								"fieldList": [
+									"childItems"
+								],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"enablePartitionDiscovery": false
