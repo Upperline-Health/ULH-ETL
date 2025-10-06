@@ -1,9 +1,0 @@
-{
-	"name": "PL_Ingest_To_Raw_v3",
-	"properties": {
-		"folder": {
-			"name": "ingest"
-		},
-		"annotations": []
-	}
-}
