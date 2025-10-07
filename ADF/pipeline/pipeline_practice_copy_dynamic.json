@@ -115,29 +115,6 @@
 									}
 								}
 							]
-						},
-						{
-							"name": "Execute PL_Load_Sink_To_Snowflake",
-							"type": "ExecutePipeline",
-							"dependsOn": [
-								{
-									"activity": "Copy_From_Source_To_Sink",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"pipeline": {
-									"referenceName": "PL_Load_Sink_To_Snowflake",
-									"type": "PipelineReference"
-								},
-								"waitOnCompletion": true
-							}
 						}
 					]
 				}
