@@ -1,0 +1,25 @@
+{
+	"name": "DS_ADLS_Binary_ForLoad",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SINK_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"container": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": {
+					"value": "@{dataset().container}",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}
