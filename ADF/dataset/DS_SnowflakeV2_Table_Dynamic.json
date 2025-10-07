@@ -1,6 +1,10 @@
 {
 	"name": "DS_SnowflakeV2_Table_Dynamic",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Snowflake",
+			"type": "LinkedServiceReference"
+		},
 		"parameters": {
 			"database": {
 				"type": "String"
