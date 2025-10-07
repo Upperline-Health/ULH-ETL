@@ -1,0 +1,34 @@
+{
+	"name": "DS_Snowflake_Table_Dynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Snowflake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"database": {
+				"type": "String"
+			},
+			"schema": {
+				"type": "String"
+			},
+			"table": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@{dataset().schema}",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@{dataset().table}",
+				"type": "Expression"
+			},
+			"database": "@{dataset().database}"
+		}
+	}
+}
