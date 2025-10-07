@@ -16,6 +16,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "snowflake"
+		},
 		"annotations": [],
 		"type": "SnowflakeV2Table",
 		"schema": [],
