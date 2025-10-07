@@ -13,6 +13,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "adls"
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
