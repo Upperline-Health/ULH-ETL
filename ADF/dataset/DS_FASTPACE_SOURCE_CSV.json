@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "appointmentdata/fastpace",
-				"fileSystem": "raw"
+				"folderPath": "appointmentdata/fastpace"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
