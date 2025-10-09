@@ -1,0 +1,70 @@
+{
+	"name": "PL_FASTPACE_APPOINTMENTS_LOAD",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_ADLS_Fastpace_to_Snowflake",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 2,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						},
+						"recursive": false,
+						"wildcardFolderPath": "appointmentdata/fastpace",
+						"wildcardFileName": "*.csv"
+					},
+					"sink": {
+						"type": "SnowflakeSink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						},
+						"snowflakeSettings": {
+							"useCopyCommand": true,
+							"fileFormatName": "FF_FASTPACE_CSV",
+							"additionalCopyOptions": "ON_ERROR=CONTINUE,TRIM_SPACE=TRUE,EMPTY_FIELD_AS_NULL=TRUE",
+							"stagingSettings": {
+								"linkedServiceName": {
+									"referenceName": "LS_ADLS_RAW",
+									"type": "LinkedServiceReference"
+								},
+								"fileSystem": "raw",
+								"path": "util/snowflake_appointment_staging/fastpace/@{pipeline().RunId}/",
+								"enableCleanup": true
+							}
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_FASTPACE_SOURCE_CSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SF_FASTPACE_APPTS",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
