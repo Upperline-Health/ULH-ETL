@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "FastPace_Appointments_20251005.csv",
 				"folderPath": "appointmentdata/fastpace",
 				"fileSystem": "raw"
 			},
