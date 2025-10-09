@@ -64,18 +64,6 @@
 						}
 					}
 				},
-				"inputs": [
-					{
-						"referenceName": "DS_ADLS_Binary_ForLoad",
-						"type": "DatasetReference",
-						"parameters": {
-							"container": {
-								"value": "@pipeline().parameters.p_sink_container",
-								"type": "Expression"
-							}
-						}
-					}
-				],
 				"outputs": [
 					{
 						"referenceName": "DS_Snowflake_Table_Dynamic",
