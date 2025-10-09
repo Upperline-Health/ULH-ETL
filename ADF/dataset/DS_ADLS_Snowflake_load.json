@@ -1,0 +1,18 @@
+{
+	"name": "DS_ADLS_Snowflake_load",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB_STAGE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "appointmentdata/fastpace",
+				"container": "raw"
+			}
+		}
+	}
+}
