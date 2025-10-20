@@ -49,7 +49,7 @@
 							}
 						}
 					},
-					"enableStaging": false
+					"enableStaging": true
 				},
 				"inputs": [
 					{
