@@ -19,7 +19,7 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
+							"recursive": false,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -49,7 +49,14 @@
 							}
 						}
 					},
-					"enableStaging": true
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "LS_BLOB_STAGE",
+							"type": "LinkedServiceReference"
+						},
+						"path": "util/snowflake_appointment_staging/fastpace/"
+					}
 				},
 				"inputs": [
 					{
