@@ -1,0 +1,20 @@
+{
+	"name": "DS_CSV_TO_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SINK_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "@{dataset().directory}",
+				"fileSystem": "@{dataset().container}"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
