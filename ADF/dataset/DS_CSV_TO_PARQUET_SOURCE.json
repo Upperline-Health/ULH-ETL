@@ -1,0 +1,173 @@
+{
+	"name": "DS_CSV_TO_PARQUET_SOURCE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_CSV_TO_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "*",
+				"folderPath": "appointmentdata/fastpace",
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "AppointmentDate",
+				"type": "String"
+			},
+			{
+				"name": "Provider",
+				"type": "String"
+			},
+			{
+				"name": "AppointmentStartDate",
+				"type": "String"
+			},
+			{
+				"name": "AppointmentStatus",
+				"type": "String"
+			},
+			{
+				"name": "AppointmentType",
+				"type": "String"
+			},
+			{
+				"name": "ProviderNPI",
+				"type": "String"
+			},
+			{
+				"name": "OfficeLocation",
+				"type": "String"
+			},
+			{
+				"name": "Address1",
+				"type": "String"
+			},
+			{
+				"name": "Address2",
+				"type": "String"
+			},
+			{
+				"name": "CellPhone",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "HomePhone",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "ZipCode",
+				"type": "String"
+			},
+			{
+				"name": "PrimaryInsurancePackageName",
+				"type": "String"
+			},
+			{
+				"name": "PrimaryInsuranceSubscriberId",
+				"type": "String"
+			},
+			{
+				"name": "SecondaryInsurancePackageName",
+				"type": "String"
+			},
+			{
+				"name": "SecondaryInsuranceSubscriberId",
+				"type": "String"
+			},
+			{
+				"name": "SecondaryInsuranceGroupNumber",
+				"type": "String"
+			},
+			{
+				"name": "DateOfBirth",
+				"type": "String"
+			},
+			{
+				"name": "Ethnicity",
+				"type": "String"
+			},
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "Sex",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			},
+			{
+				"name": "PatientNumber",
+				"type": "String"
+			},
+			{
+				"name": "Language",
+				"type": "String"
+			},
+			{
+				"name": "QMBStatus",
+				"type": "String"
+			},
+			{
+				"name": "Race",
+				"type": "String"
+			},
+			{
+				"name": "SystemId",
+				"type": "String"
+			},
+			{
+				"name": "AppointmentDeleted",
+				"type": "String"
+			},
+			{
+				"name": "InteractionResult",
+				"type": "String"
+			},
+			{
+				"name": "InteractionUser",
+				"type": "String"
+			},
+			{
+				"name": "Eligible",
+				"type": "String"
+			},
+			{
+				"name": "AcoEnrolled",
+				"type": "String"
+			},
+			{
+				"name": "ApcmEnrolled",
+				"type": "String"
+			},
+			{
+				"name": "emr_appointment_id",
+				"type": "String"
+			}
+		]
+	}
+}
