@@ -1,0 +1,29 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorageTest",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "VENDOR_HUMANA_CSE_DUMMYDATA.txt",
+				"folderPath": "Practices/Humana/Capitated_Specialist_Expense",
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SRC_MBR_ID|YEARMO|CAP_SPEC_AMT|TYPE",
+				"type": "String"
+			}
+		]
+	}
+}
