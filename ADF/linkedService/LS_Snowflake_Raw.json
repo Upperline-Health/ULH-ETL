@@ -2,7 +2,7 @@
 	"name": "LS_Snowflake_Raw",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"description": "snowflake link service",
+		"description": "snowflake link service Upperline",
 		"annotations": [],
 		"type": "SnowflakeV2",
 		"typeProperties": {
