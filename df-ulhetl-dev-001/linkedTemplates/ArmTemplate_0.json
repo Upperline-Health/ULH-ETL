@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Snowflake'"
 		},
+		"LS_Snowflake_Upperline_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_Snowflake_Upperline'"
+		},
 		"AzureDataLakeStorageTest_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://stulhetldev001.dfs.core.windows.net/"
@@ -26,6 +30,14 @@
 		"LS_Snowflake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://stulhetldev001.dfs.core.windows.net/"
+		},
+		"LS_Snowflake_Upperline_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "UPPERLINE"
+		},
+		"LS_Snowflake_Upperline_properties_typeProperties_role": {
+			"type": "string",
+			"defaultValue": "ACCOUNTADMIN"
 		}
 	},
 	"variables": {
@@ -77,6 +89,29 @@
 						"value": "[parameters('LS_Snowflake_accountKey')]"
 					}
 				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Snowflake_Upperline')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SnowflakeV2",
+				"typeProperties": {
+					"authenticationType": "Basic",
+					"accountIdentifier": "FFA59799",
+					"user": "JAN-MICHAEL.LUIS@UPPERLINEHEALTH.COM",
+					"database": "[parameters('LS_Snowflake_Upperline_properties_typeProperties_database')]",
+					"warehouse": "Engineering_wh",
+					"role": "[parameters('LS_Snowflake_Upperline_properties_typeProperties_role')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Snowflake_Upperline_password')]"
+					}
+				},
+				"version": "1.1"
 			},
 			"dependsOn": []
 		}

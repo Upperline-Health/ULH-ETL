@@ -14,11 +14,20 @@
 		"LS_Snowflake_accountKey": {
 			"value": ""
 		},
+		"LS_Snowflake_Upperline_password": {
+			"value": ""
+		},
 		"AzureDataLakeStorageTest_properties_typeProperties_url": {
 			"value": "https://stulhetldev001.dfs.core.windows.net/"
 		},
 		"LS_Snowflake_properties_typeProperties_url": {
 			"value": "https://stulhetldev001.dfs.core.windows.net/"
+		},
+		"LS_Snowflake_Upperline_properties_typeProperties_database": {
+			"value": "UPPERLINE"
+		},
+		"LS_Snowflake_Upperline_properties_typeProperties_role": {
+			"value": "ACCOUNTADMIN"
 		},
 		"containerUri": {
 			"value": ""

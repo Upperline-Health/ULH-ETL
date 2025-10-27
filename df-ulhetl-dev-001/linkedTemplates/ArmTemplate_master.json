@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Snowflake'"
 		},
+		"LS_Snowflake_Upperline_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_Snowflake_Upperline'"
+		},
 		"AzureDataLakeStorageTest_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://stulhetldev001.dfs.core.windows.net/"
@@ -26,6 +30,14 @@
 		"LS_Snowflake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://stulhetldev001.dfs.core.windows.net/"
+		},
+		"LS_Snowflake_Upperline_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "UPPERLINE"
+		},
+		"LS_Snowflake_Upperline_properties_typeProperties_role": {
+			"type": "string",
+			"defaultValue": "ACCOUNTADMIN"
 		},
 		"containerUri": {
 			"type": "string",
@@ -63,11 +75,20 @@
 					"LS_Snowflake_accountKey": {
 						"value": "[parameters('LS_Snowflake_accountKey')]"
 					},
+					"LS_Snowflake_Upperline_password": {
+						"value": "[parameters('LS_Snowflake_Upperline_password')]"
+					},
 					"AzureDataLakeStorageTest_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorageTest_properties_typeProperties_url')]"
 					},
 					"LS_Snowflake_properties_typeProperties_url": {
 						"value": "[parameters('LS_Snowflake_properties_typeProperties_url')]"
+					},
+					"LS_Snowflake_Upperline_properties_typeProperties_database": {
+						"value": "[parameters('LS_Snowflake_Upperline_properties_typeProperties_database')]"
+					},
+					"LS_Snowflake_Upperline_properties_typeProperties_role": {
+						"value": "[parameters('LS_Snowflake_Upperline_properties_typeProperties_role')]"
 					}
 				}
 			},
