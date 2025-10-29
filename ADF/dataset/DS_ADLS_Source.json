@@ -1,0 +1,19 @@
+{
+	"name": "DS_ADLS_Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "*.txt",
+				"folderPath": "Practices/Humana/Capitated_Specialist_Expense",
+				"fileSystem": "raw"
+			}
+		}
+	}
+}
