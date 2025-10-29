@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "*.txt",
 				"folderPath": "Practices/Humana/Capitated_Specialist_Expense",
 				"fileSystem": "raw"
 			}
