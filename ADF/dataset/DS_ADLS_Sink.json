@@ -5,12 +5,29 @@
 			"referenceName": "LS_ADLS_Sink",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folderPath": {
+				"type": "String",
+				"defaultValue": "Archive/Humana/Capitated_Specialist_Expense"
+			},
+			"fileName": {
+				"type": "String",
+				"defaultValue": null
+			}
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Archive/Humana/Capitated_Specialist_Expense",
+				"fileName": {
+					"value": "@{dataset().fileName}",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@{dataset().folderPath}",
+					"type": "Expression"
+				},
 				"fileSystem": "raw"
 			}
 		}
