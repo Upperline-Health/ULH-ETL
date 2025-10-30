@@ -9,10 +9,6 @@
 			"folderPath": {
 				"type": "String",
 				"defaultValue": "Archive/Humana/Capitated_Specialist_Expense"
-			},
-			"fileName": {
-				"type": "String",
-				"defaultValue": null
 			}
 		},
 		"annotations": [],
@@ -20,10 +16,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@{dataset().fileName}",
-					"type": "Expression"
-				},
 				"folderPath": {
 					"value": "@{dataset().folderPath}",
 					"type": "Expression"
