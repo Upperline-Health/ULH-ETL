@@ -2,21 +2,17 @@
 	"name": "DS_Config_Practices",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_SINK_ADLS",
+			"referenceName": "LS_ADLS_Sink",
 			"type": "LinkedServiceReference"
-		},
-		"folder": {
-			"name": "config"
 		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "practice_ingest_config_v2.json",
-				"folderPath": "util/config",
 				"fileSystem": "raw"
-			}
+			},
+			"encodingName": "utf-8"
 		},
 		"schema": {}
 	}
