@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "practice_ingest_config.json",
+				"fileName": "practice_ingest_config_v2.json",
 				"folderPath": "util/config",
 				"fileSystem": "raw"
 			}
