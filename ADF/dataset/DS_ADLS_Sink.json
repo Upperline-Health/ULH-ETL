@@ -8,7 +8,7 @@
 		"parameters": {
 			"folderPath": {
 				"type": "String",
-				"defaultValue": "Archive/Humana/Capitated_Specialist_Expense"
+				"defaultValue": "archive/humana/capitated_specialist_expense"
 			}
 		},
 		"annotations": [],
