@@ -5,12 +5,21 @@
 			"referenceName": "LS_ADLS_Source",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folderPath": {
+				"type": "String",
+				"defaultValue": "practices/humana/capitated_specialist_expense"
+			}
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Practices/Humana/Capitated_Specialist_Expense",
+				"folderPath": {
+					"value": "@{dataset().folderPath}",
+					"type": "Expression"
+				},
 				"fileSystem": "raw"
 			}
 		}
