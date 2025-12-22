@@ -1,6 +1,10 @@
 {
 	"name": "DS_ADLS_Source_Binary",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
 		"parameters": {
 			"container": {
 				"type": "string"
@@ -16,7 +20,7 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
+				"type": "AzureBlobStorageLocation",
 				"fileName": {
 					"value": "@dataset().filename",
 					"type": "Expression"
@@ -25,7 +29,7 @@
 					"value": "@dataset().directory",
 					"type": "Expression"
 				},
-				"fileSystem": {
+				"container": {
 					"value": "@dataset().container",
 					"type": "Expression"
 				}
